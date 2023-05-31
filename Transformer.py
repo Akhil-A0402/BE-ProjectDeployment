@@ -160,31 +160,6 @@ def custom_standardization(input_string):
     return tf.strings.regex_replace(lowercase, "[%s]" % re.escape(strip_chars), "")
 
 def textVectorization():
-    # Tokenizing Sentence
-    # strip_chars = string.punctuation + "¿"
-    # strip_chars = strip_chars.replace("[", "")
-    # strip_chars = strip_chars.replace("]", "")
-
-    # check("string ok")
-    # def custom_standardization(input_string):
-    #     lowercase = tf.strings.lower(input_string)
-    #     return tf.strings.regex_replace(lowercase, "[%s]" % re.escape(strip_chars), "")
-    # check("custom_standardization ok")
-    # eng_vector = tf.keras.layers.TextVectorization(
-    #     max_tokens= 30000, output_mode = "int", output_sequence_length = 20 
-    # )
-
-    # hin_vector = tf.keras.layers.TextVectorization(
-    #     max_tokens= 30000, output_mode = "int", output_sequence_length = 20+1, standardize=custom_standardization 
-    # )
-    #reading pickle file
-    # return "hello"
-    # custom_standardization()
-    # with open(os.path.join(os.path.dirname(os.path.realpath(__file__)),"en_hi","eng_vector.pkl"), "rb") as eng:
-    #     eng = pickle.load(eng)
-    # check("opening file ok")
-    # with open(os.path.join(os.path.dirname(os.path.realpath(__file__)),"en_hi","hin_vector.pkl"), "rb") as hin:
-    #     hin = pickle.load(hin)
     file1 = open(os.path.join(os.path.dirname(os.path.realpath(__file__)),"en_hi","eng_vector.pkl"), "rb")
     eng= pickle.load(file1)
     file2 = open(os.path.join(os.path.dirname(os.path.realpath(__file__)),"en_hi","hin_vector.pkl"), "rb")
@@ -222,6 +197,3 @@ def decode_sequence(input_sentence, hin_vector, eng_vector, transformer):
             break
     check("decoded compeleted ok")
     return decoded_sentence[8:-5]
-
-# with open(os.path.join(os.path.dirname(os.path.realpath(__file__)),"en_hi","hin_vector.pkl"), "rb") as hin:
-#     hin = pickle.load(hin)

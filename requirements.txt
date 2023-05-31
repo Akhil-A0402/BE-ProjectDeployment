@@ -1,6 +1,4 @@
 tensorflow==2.12.0
-pickle
-re
-numpy
-flask
+numpy==1.23.5
+Flask==2.3.2
 gunicorn==18.0.0
